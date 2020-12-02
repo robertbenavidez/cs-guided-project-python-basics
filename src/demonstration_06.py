@@ -15,6 +15,24 @@ Examples:
 - XO("zpzpzpp") ➞ True (Returns True if no x and o)
 - XO("zzoo") ➞ False
 """
-def XO(txt):
-    # Your code here
+# def XO(txt):
+#     txt_lower = txt.lower()
+#     return txt_lower.count('x') == txt_lower.count('o')
 
+def XO(txt):
+    # lowercase our txt
+    txt_lower = txt.lower()
+    x_count = 0
+    o_count = 0
+    # loop over each character, and coun x and o
+    for char in txt_lower:
+        if char == 'x':
+            x_count += 1
+        elif char == 'o':
+            o_count += 1
+        # do something
+    return x_count == o_count
+
+print(XO("ooxx"))
+print(XO("xooxx"))
+print(XO("ooxXm"))
